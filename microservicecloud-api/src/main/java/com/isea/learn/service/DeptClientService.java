@@ -15,7 +15,7 @@ import java.util.List;
  * @target:  一个接口+一个注解：该接口作用在 MICROSERVICECLOUD-DEPT 微服务上
  */
 
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+@FeignClient(value = "MICROSERVICECLOUD-DEPT" ,fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {
     @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)

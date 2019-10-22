@@ -14,12 +14,14 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @EnableEurekaClient   //本服务启动后会自动注册进eureka服务中
 @SpringBootApplication
-@EnableFeignClients(basePackages= {"com.isea.learn"})
-@ComponentScan("com.isea.learn")
-public class DeptConsumerFegin_App
-{
-    public static void main(String[] args)
-    {
+@EnableFeignClients(basePackages = {"com.isea.learn", "com.joinbright.iot"})
+@ComponentScan(basePackages = {"com.isea.learn", "com.joinbright.iot"})
+public class DeptConsumerFegin_App {
+
+//    @Autowired
+//    static   RealTimeClientService realTimeClientService = null;
+
+    public static void main(String[] args) {
         SpringApplication.run(DeptConsumerFegin_App.class, args);
     }
 }
