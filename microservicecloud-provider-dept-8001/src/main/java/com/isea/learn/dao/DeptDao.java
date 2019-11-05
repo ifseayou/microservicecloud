@@ -12,7 +12,7 @@ import java.util.List;
  * @target:
  */
 
-@Mapper
+@Mapper // 这个注解一定要加，是Mybatis的注解
 public interface DeptDao {
     public boolean addDept(Dept dept);
 

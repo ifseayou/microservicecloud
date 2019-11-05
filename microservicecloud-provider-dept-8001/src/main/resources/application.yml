@@ -1,14 +1,16 @@
 server:
   port: 8001
 
+# 下面是Mybatis的整合
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.isea.learn.entities    # 所有Entity别名类所在包
+  type-aliases-package: com.isea.learn.entities    # 所有Entity别名类所在包，告诉mybatis，只要是这个包下面的，统统都是一个个实体类
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
+# spring的整合
 spring:
-  application:
+  application:                                             # 对于微服务最重要的名字，
     name: microservicecloud-dept                            # 对外暴露的微服务的名字
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型

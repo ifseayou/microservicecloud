@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+<!--这里的mapper标签非常重要，表示这里是对那个实体类进行操作，或者是对数据库中的哪张表进行操作-->
 <mapper namespace="com.isea.learn.dao.DeptDao">
 
     <select id="findById" resultType="Dept" parameterType="Long">
@@ -13,7 +13,7 @@
     </select>
 
     <insert id="addDept" parameterType="Dept">
-           INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE());
+           INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE()); -- 这里使用的不是传过来的参数，而是使用Mybatis的固定参数
     </insert>
 
 </mapper>
