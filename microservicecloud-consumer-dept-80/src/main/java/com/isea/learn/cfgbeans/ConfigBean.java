@@ -31,7 +31,7 @@ public class ConfigBean
      * @return
      */
     @Bean
-    @LoadBalanced
+    @LoadBalanced // 80作为消费者，使用Ribbon来实现客户端的负载均衡，或者说是消费者端的负载均衡
     public RestTemplate getRestTemplate()
     {
         return new RestTemplate();

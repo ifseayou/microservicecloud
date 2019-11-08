@@ -11,7 +11,7 @@ mybatis:
 # spring的整合
 spring:
   application:                                             # 对于微服务最重要的名字，
-    name: microservicecloud-dept                            # 对外暴露的微服务的名字
+    name: microservicecloud-dept                            # 对外暴露的微服务的名字，在erueka中会全部修改成大写的。
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -32,8 +32,9 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
 
   instance:
-    instance-id: microservicecloud-dept8001   #自定义服务名称信息
-    prefer-ip-address: true     #访问路径可以显示IP地址
+    instance-id: microservicecloud-dept8001   #自定义服务名称信息，microservicecloud-dept8001是服务名称，一个微服务，可以对应多个instance，这样就可以实现负载
+                                               # 对应着erueka页面中的up位置，我们更希望该位置在鼠标覆盖的时候是ip+port的形式来展现
+    prefer-ip-address: true     #访问路径可以显示IP地址，比如之前显示的是localhost，但是现在可以显示localhost对应的主机的IP地址
 
 info:
   app.name: isea-microservicecloud

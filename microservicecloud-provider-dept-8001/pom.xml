@@ -65,11 +65,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
+        <!--下面这个表示标配-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
+        <!-- actuator监控信息完善，也就是取出原有的errorPage页面，展示微服务实例的相关信息 -->
+        <!--另外在父工程中添加build（构建）我们要将其写入到配置里面保证构建的时候可以获取，具体看父工程的pom-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

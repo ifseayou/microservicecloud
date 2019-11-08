@@ -12,6 +12,7 @@ import java.util.List;
 public class DeptController_Consumer
 {
 //    private static final String REST_URL_PREFIX = "http://localhost:8001";
+//    此时从IP地址的方式更改为标准的微服务访问模式
     private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
 

@@ -9,6 +9,7 @@
 #    fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
 #    com.isea.learn.service-url:
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/        #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
+#                           这里是直接取的是本配置文件中的值也即:localhost:7001/erueka/ 该地址可以访问到erueka中的服务
 
 server:
   port: 7001
@@ -17,8 +18,8 @@ eureka:
   instance:
     hostname: eureka7001.com #eureka服务端的实例名称
   client:
-    register-with-eureka: false     #false表示不向注册中心注册自己。
-    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    register-with-eureka: false     #false表示不向注册中心注册自己。只有客户端才向erueka注册
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务，也就是说不需要去注册中心找服务，因为我不需要别的服务
     service-url:
       #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
       defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
