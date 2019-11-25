@@ -9,6 +9,7 @@
         <module name="microservicecloud-api" />
         <module name="microservicecloud-consumer-dept-80" />
         <module name="microservicecloud-consumer-dept-fegin" />
+        <module name="microservicecloud-consumer-hystrix-dashboard" />
         <module name="microservicecloud-eureka-7001" />
         <module name="microservicecloud-eureka-7002" />
         <module name="microservicecloud-eureka-7003" />

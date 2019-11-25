@@ -22,7 +22,8 @@ public class DeptController {
     private DeptService service;
 
     @RequestMapping(value="/dept/get/{id}",method=RequestMethod.GET)
-    @HystrixCommand(fallbackMethod = "processHystrix_Get")
+    @HystrixCommand(fallbackMethod = "processHystrix_Get") // 1，这里业务逻辑和异常处理直接耦合在一起，2，没有业务方法都有对应的一个异常处理方法，应该是用AOP的思想来进行改进
+    // fallbackMethod = "processHystrix_Get"，如果调用服务方法失败并抛出异常信息之后，会自动调用@HystrixCommand标注好的fallbackMethod调用类中的指定方法
     public Dept get(@PathVariable("id") Long id)
     {
         Dept dept =  this.service.get(id);

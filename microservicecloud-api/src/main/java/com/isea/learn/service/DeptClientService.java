@@ -14,7 +14,7 @@ import java.util.List;
  * @time 16:06
  * @target:  一个接口+一个注解：该接口作用在 MICROSERVICECLOUD-DEPT 微服务上
  */
-
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT") // 该接口下的所有方法有异常都找fallbackFactory
 @FeignClient(value = "MICROSERVICECLOUD-DEPT" ,fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {

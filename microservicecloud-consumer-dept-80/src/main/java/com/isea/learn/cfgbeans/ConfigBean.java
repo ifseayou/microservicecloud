@@ -1,5 +1,7 @@
 package com.isea.learn.cfgbeans;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +37,12 @@ public class ConfigBean
     public RestTemplate getRestTemplate()
     {
         return new RestTemplate();
+    }
+
+    @Bean
+    public IRule myRule(){ // 这里做了显示的覆盖之后，替代了默认的轮询负载均衡算法
+        return new RandomRule();// 使用随机替代默认的轮询
+        // ribbon负载均衡算法的切换非常的简单，直接更换对应的负载均衡算法名字的类名即可。
     }
 }
 

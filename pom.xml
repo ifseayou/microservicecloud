@@ -18,6 +18,7 @@
         <module>microservicecloud-consumer-dept-fegin</module>
         <module>microservicecloud-provider-dept-hystrix-8001</module>
         <module>microservicecloud-zuul-gateway-9527</module>
+        <module>microservicecloud-consumer-hystrix-dashboard</module>
     </modules>
 
 

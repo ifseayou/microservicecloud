@@ -17,10 +17,6 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableFeignClients(basePackages = {"com.isea.learn", "com.joinbright.iot"})
 @ComponentScan(basePackages = {"com.isea.learn", "com.joinbright.iot"})
 public class DeptConsumerFegin_App {
-
-//    @Autowired
-//    static   RealTimeClientService realTimeClientService = null;
-
     public static void main(String[] args) {
         SpringApplication.run(DeptConsumerFegin_App.class, args);
     }
