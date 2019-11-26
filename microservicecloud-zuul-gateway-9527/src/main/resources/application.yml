@@ -13,11 +13,11 @@ eureka:
     instance-id: gateway-9527.com
     prefer-ip-address: true
 
-
+# 将原来的微服务名称修改为mydept，更加安全。
 zuul:
-#  ignored-services: microservicecloud-dept
-  prefix: /isea
-  ignored-services: "*"
+#  ignored-services: microservicecloud-dept  # 将原来的带有微服务名称的地址封了，只能使用别名的方式来访问
+  prefix: /isea  # 在所有的服务前面都需要添加/isea  [zuul代理的地址 + /isea + 微服务别名 + restful风格的地址]
+  ignored-services: "*"  # 将所有真实的微服务的名字都禁掉
   routes:
     mydept.serviceId: microservicecloud-dept
     mydept.path: /mydept/**
